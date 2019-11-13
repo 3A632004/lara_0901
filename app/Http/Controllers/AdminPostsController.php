@@ -30,6 +30,6 @@ class AdminPostsController extends Controller
 
     public function store()
     {
-
+        Post::create($request->all());
     }
 }
