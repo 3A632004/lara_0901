@@ -27,6 +27,9 @@
 
 <div class="row">
     <div class="col-lg-12">
+        <form action="/admin/posts/{{$post->id}}" method="POST">
+            {{csrf_field()}}
+            {{method_field('DELETE')}}
         <div class="table-responsive">
             <table class="table table-bordered table-hover">
                 <thead>
@@ -53,6 +56,7 @@
                 </tbody>
             </table>
         </div>
+        </form>
     </div>
 </div>
 <!-- /.row -->
