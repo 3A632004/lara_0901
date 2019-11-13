@@ -30,7 +30,9 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <form role="form">
+        <form action="/admin/posts/{{$post->id}}" method="POST" role="form">
+            {{ csrf_field() }}
+            {{method_field('PATCH')}}
 
             <div class="form-group">
                 <label>標題：</label>
