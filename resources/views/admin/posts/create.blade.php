@@ -30,8 +30,8 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <form role="form">
-
+        <form action="/admin/posts" methoh="POST" role="form">
+            {{ csrf_field() }}
             <div class="form-group">
                 <label>標題：</label>
                 <input class="form-control" placeholder="請輸入文章標題">
@@ -62,8 +62,6 @@
     </div>
 </div>
 <!-- /.row -->
-@endsection
-
 @foreach($posts as $post)
     <tr>
         <td>{{$post->id}}</td>
@@ -76,3 +74,6 @@
         </td>
     </tr>
 @endforeach
+@endsection
+
+
