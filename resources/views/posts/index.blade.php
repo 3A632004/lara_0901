@@ -37,6 +37,19 @@
             </div>
             <hr>
             @endforeach
+
+            @foreach($posts as $post)
+            <tr>
+                <td>{{$post->id}}</td>
+                <td>{{$post->title}}</td>
+                <td>{{($post->is_feature)? 'v' : 'x'}}</td>
+                <td>
+                    <a href="{{route('admin.posts.edit',$post->id)}}">編輯</a>
+                    /
+                    <a href="#">刪除</a>
+                </td>
+            </tr>
+            @endforeach
             <!-- Pager -->
             <ul class="pager">
                 <li class="next">
