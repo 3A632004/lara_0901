@@ -34,17 +34,17 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label>標題：</label>
-                <input class="form-control" placeholder="請輸入文章標題">
+                <input name="title" class="form-control" placeholder="請輸入文章標題">
             </div>
 
             <div class="form-group">
                 <label>內容：</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <textarea name="content" class="form-control" rows="10"></textarea>
             </div>
 
             <div class="form-group">
                 <label>精選？</label>
-                <select class="form-control">
+                <select name="is_feature" class="form-control">
                     <option value="0">否</option>
                     <option value="1">是</option>
                 </select>
@@ -62,18 +62,7 @@
     </div>
 </div>
 <!-- /.row -->
-@foreach($posts as $post)
-    <tr>
-        <td>{{$post->id}}</td>
-        <td>{{$post->title}}</td>
-        <td>{{($post->is_feature)? 'v' : 'x'}}</td>
-        <td>
-            <a href="{{route('admin.posts.edit',$post->id)}}">編輯</a>
-            /
-            <a href="#">刪除</a>
-        </td>
-    </tr>
-@endforeach
+
 @endsection
 
 

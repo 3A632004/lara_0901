@@ -23,18 +23,18 @@ class AdminPostsController extends Controller
 
     public function edit($id)
     {
-        $post = post::find($id);
+        $post = Post::find($id);
         $data = ['post' => $post];
         return view('admin.posts.edit', $data);
     }
 
-    public function store()
+    public function store(PostRequest $request)
     {
         Post::create($request->all());
         return redirect()->route('admin.posts.index');
     }
 
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $post = Post::find($id);
 
